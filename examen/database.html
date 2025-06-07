@@ -14,12 +14,12 @@ css: azul
       <th>Nota 3</th>
     </tr>
     {% for alumno in site.data.alumnos %}
-      <tr>
-        <td>{{ alumno.nombre }}</td>
-        <td>{{ alumno.nota1 }}</td>
-        <td>{{ alumno.nota2 }}</td>
-        <td>{{ alumno.nota3 }}</td>
-      </tr>
+    <tr{% if alumno.nota < 5 %} class="suspenso"{% endif %}>
+       <td>{{ alumno.nombre }}</td>
+       <td>{{ alumno.nota1 }}</td>
+       <td>{{ alumno.nota2 }}</td>
+       <td>{{ alumno.nota3 }}</td>
+     </tr>
     {% endfor %}
   </table>
 </div>
