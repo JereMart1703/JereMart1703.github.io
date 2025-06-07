@@ -1,0 +1,30 @@
+---
+layout: default
+title: Nota media
+css: amarillo
+---
+
+<div class="content">
+  <h2>Notas de los alumnos</h2>
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Nota más alta</th>
+      <th>Nota más baja</th>
+      <th>Media</th>
+    </tr>
+    {% for alumno in site.data.alumnos %}
+      {% assign notas = alumno.nota1 | append: ',' | append: alumno.nota2 | append: ',' | append: alumno.nota3 | split: ',' %}
+      {% assign max = notas | sort | last %}
+      {% assign min = notas | sort | first %}
+      {% assign suma = notas[0] | plus: notas[1] | plus: notas[2] %}
+      {% assign media = suma | divided_by: 3.0 %}
+      <tr>
+        <td>{{ alumno.nombre }}</td>
+        <td>{{ max }}</td>
+        <td>{{ min }}</td>
+        <td>{{ media | round: 2 }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
