@@ -10,15 +10,16 @@
     {% endif %}
 </head>
 <body>
-      {% if page.header == "3and4" %}
+    {% if page.header == "3and4" %}
     <h1>Bienvenido a mi pagina del examen</h1>
 
     {% endif %}
     <div class="topnav">
-      <a href="/examen/1.html">pagina 1</a>
-      <a href="/examen/2.html">pagina2</a>
-      <a href="/examen/3.html">pagina3</a>
-      <a href="/examen/4.html">pagina 4</a>
+      <a href="/examen/database.html">VER TABLA ALUMNOS</a>
+      <a href="/examen/vernotas.html">ORDEN ALUMNOS</a>
+      <a href="/examen/añadiralumnos.html">AÑADIR ALUMNOS</a>
+      <a href="/examen/aliminaralumnos.html">ELIMINAR ALUMNOS</a>
+      <a href="/examen/actualizaralumnos.html">ACTUALIZAR NOTAS</a>
     </div>
     <div class="main">
         {{ content }}
@@ -32,5 +33,6 @@
         <p>Jeremy Martínez - Espero aprobar</p>
     </div>
     {% endif %}
+
 </body>
 </html>
